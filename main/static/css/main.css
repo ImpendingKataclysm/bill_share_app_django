@@ -1,0 +1,44 @@
+h1 {
+    color: darkgrey;
+    text-align: center;
+    font-size: 50px;
+}
+
+input[type=text], input[type=number] {
+    width: 100%;
+    padding: 8px 8px;
+    margin: 10px 0;
+}
+
+input[type=submit]{
+    background-color: YellowGreen;
+    color: White;
+    padding: 12px 12px;
+    border: none;
+    border-radius: 6px;
+
+}
+
+body {
+    background-color: GhostWhite;
+    padding: 20px;
+    font-family: Calibri, sans-serif;
+}
+
+.main_wrap {
+    width: 80%;
+    margin: auto;
+}
+
+.form_wrap, .list_wrap {
+    width: 40%;
+    margin: auto;
+}
+
+.home_form {
+    text-align: center;
+}
+
+.list_wrap {
+    font-size: 1.3rem;
+}
