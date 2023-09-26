@@ -3,5 +3,13 @@
 {% block title %}Home{% endblock %}
 
 {% block content %}
-    <p>Coming soon...</p>
+    <p>Take the stress out of splitting the bill!</p>
+    <div class="home_form form-wrap">
+        <p>How many people are sharing this bill?</p>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="Next">
+        </form>
+    </div>
 {% endblock %}
