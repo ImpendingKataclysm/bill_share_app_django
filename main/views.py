@@ -4,6 +4,7 @@ from django.urls import reverse
 from django.forms import formset_factory
 from django.http import HttpResponseServerError
 from . import forms
+from .pdf_generator import generate_pdf
 
 
 class StartView(generic.FormView):
@@ -113,7 +114,8 @@ class GenerateBillView(View):
 
 class ResultsView(generic.TemplateView):
     """
-    Display each party member's name and how much they owe towards the total
+    Display each party member's name and how much they owe towards the total.
+    Include a link to download a pdf of this data as well.
     """
     template_name = 'main/results.html'
 
@@ -133,3 +135,12 @@ class ResultsView(generic.TemplateView):
         context['total_billing_amount'] = total_billing_amount
 
         return context
+
+
+class GeneratePDFView(View):
+    def get(self, request):
+        party_members = request.session.get('party_members', [])
+        total_billing_amount = request.session.get('total_billing_amount', 0)
+
+        pdf_response = generate_pdf(party_members, total_billing_amount)
+        return pdf_response

@@ -10,5 +10,6 @@
                 <li>{{ member.name }} owes ${{ member.share_amount }}.</li>
             {% endfor %}
         </ul>
+        <a href="{% url 'bill_share:generate_pdf' %}">Download PDF</a>
     </div>
 {% endblock %}

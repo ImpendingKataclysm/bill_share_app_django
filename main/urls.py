@@ -7,4 +7,5 @@ urlpatterns = [
     path('', views.StartView.as_view(), name='home'),
     path('generate_bill/<int:party_size>/<str:amount_due>/', views.GenerateBillView.as_view(), name='generate_bill'),
     path('results/', views.ResultsView.as_view(), name='results'),
+    path('pdf_results/', views.GeneratePDFView.as_view(), name='generate_pdf')
 ]
