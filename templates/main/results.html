@@ -3,11 +3,12 @@
 {% block title %}Results{% endblock %}
 
 {% block content %}
-    <h2>Final Results:</h2>
-    <p>Total Billing Amount: {{ total_billing_amount }}</p>
-    <ul>
-        {% for member in party_members %}
-            <li>{{ member.name }} owes ${{ member.share_amount }}.</li>
-        {% endfor %}
-    </ul>
+    <div class="list_wrap">
+        <h2><strong>Total Billing Amount</strong>: {{ total_billing_amount }}</h2>
+        <ul>
+            {% for member in party_members %}
+                <li>{{ member.name }} owes ${{ member.share_amount }}.</li>
+            {% endfor %}
+        </ul>
+    </div>
 {% endblock %}
