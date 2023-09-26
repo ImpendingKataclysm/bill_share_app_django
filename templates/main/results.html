@@ -1,0 +1,13 @@
+{% extends 'main/base.html' %}
+
+{% block title %}Results{% endblock %}
+
+{% block content %}
+    <h2>Final Results:</h2>
+    <p>Total Billing Amount: {{ total_billing_amount }}</p>
+    <ul>
+        {% for member in party_members %}
+            <li>{{ member.name }} owes ${{ member.share_amount }}.</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
