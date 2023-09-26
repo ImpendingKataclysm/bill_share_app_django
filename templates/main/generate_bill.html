@@ -1,0 +1,20 @@
+{%  extends 'main/base.html' %}
+
+{% block title %}Generate Bill{% endblock %}
+
+{% block content %}
+    <p>How many days did each person spend here during the billing period?</p>
+    <form method="post">
+        {%  csrf_token %}
+        {{ formset.management_form }}
+        <label for="billing_amount">Total Amount Due:</label>
+        <input type="text" id="billing_amount" name="billing_amount" value="{{ amount_due }}">
+        {% for form in formset %}
+            {{ form.name.label }}
+            {{ form.name }}
+            {{ form.days_spent.label }}
+            {{ form.days_spent }}
+        {% endfor %}
+        <input type="submit" value="Enter">
+    </form>
+{% endblock %}
