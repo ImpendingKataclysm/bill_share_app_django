@@ -56,8 +56,8 @@ class GenerateBillView(View):
         PartySizeForm.
         :return: Render the forms on the generate_bill page.
         """
-        PartyMemberFormSet = formset_factory(forms.PartyMemberForm, extra=party_size)
-        formset = PartyMemberFormSet()
+        party_member_form_set = formset_factory(forms.PartyMemberForm, extra=party_size)
+        formset = party_member_form_set()
 
         return render(
             request,
