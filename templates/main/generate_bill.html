@@ -7,9 +7,9 @@
         <form method="post">
             {%  csrf_token %}
             {{ formset.management_form }}
-            <label for="billing_amount">Total Amount Due:</label>
+            <label for="billing_amount" class="text-bg-dark p-2">Total Amount Due:</label>
             <input type="text" id="billing_amount" name="billing_amount" value="{{ amount_due }}">
-            <p>How many days did each person spend here during the billing period?</p>
+            <p class="text-bg-primary p-3 mt-2">How many days did each person spend here during the billing period?</p>
             {% for form in formset %}
                 {{ form.name.label }}
                 {{ form.name }}

@@ -4,8 +4,8 @@
 
 {% block content %}
     <div class="home_form form_wrap">
-        <p class="display-2">Take the stress out of splitting the bill!</p>
-        <p>How many people are sharing this bill?</p>
+        <p class="display-3">Take the stress out of splitting the bill!</p>
+        <p class="text-bg-primary p-3">How many people are sharing this bill?</p>
         <form method="post">
             {% csrf_token %}
             {{ form.as_p }}
