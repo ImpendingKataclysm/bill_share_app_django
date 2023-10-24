@@ -4,7 +4,7 @@
 
 {% block content %}
     <div class="list_wrap">
-        <h2 class="display-2">Total Billing Amount: {{ total_billing_amount }}</h2>
+        <h2 class="display-4">Total Billing Amount: {{ total_billing_amount }}</h2>
         <ul>
             {% for member in party_members %}
                 <li>{{ member.name }} owes ${{ member.share_amount }}.</li>
