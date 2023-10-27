@@ -3,7 +3,7 @@ from django import forms
 
 class PartySizeForm(forms.Form):
     party_size = forms.IntegerField(
-        label='Party Size',
+        label='Party Size:',
         min_value=1,
         max_value=10,
     )
@@ -18,10 +18,10 @@ class PartySizeForm(forms.Form):
 class PartyMemberForm(forms.Form):
     name = forms.CharField(
         max_length=100,
-        label='Name'
+        label='Name:'
     )
     days_spent = forms.IntegerField(
         max_value=366,
         min_value=1,
-        label='Days Spent'
+        label='Days Spent:'
     )

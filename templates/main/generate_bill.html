@@ -3,20 +3,19 @@
 {% block title %}Generate Bill{% endblock %}
 
 {% block content %}
-    <div class="form_wrap">
-        <form method="post">
+    <div>
+        <h2 class="display-2">Total Amount Due: ${{ amount_due }}</h2>
+        <form method="post" class="d-grid">
             {%  csrf_token %}
             {{ formset.management_form }}
-            <label for="billing_amount" class="text-bg-dark p-2">Total Amount Due:</label>
-            <input type="text" id="billing_amount" name="billing_amount" value="{{ amount_due }}">
-            <p class="text-bg-primary p-3 mt-2">How many days did each person spend here during the billing period?</p>
+            <p class="text-bg-primary p-5 my-4 rounded display-6">How many days did each person spend here during the billing period?</p>
             {% for form in formset %}
                 {{ form.name.label }}
                 {{ form.name }}
                 {{ form.days_spent.label }}
                 {{ form.days_spent }}
             {% endfor %}
-            <input type="submit" value="Enter">
+            <input type="submit" class="btn btn-block btn-dark" value="Enter">
         </form>
     </div>
 {% endblock %}
