@@ -3,18 +3,20 @@
 {% block title %}Home{% endblock %}
 
 {% block content %}
-    <div>
-        <div class="text-bg-primary my-4 p-5 rounded">
-            <p class="display-6">Take the stress out of splitting the bill!</p>
+    <div class="card">
+        <div class="text-bg-primary my-4 p-5 rounded card-header">
+            <p class="display-6 card-title">Take the stress out of splitting the bill!</p>
         </div>
-        <p class="display-6">How many people are sharing this bill?</p>
-        <form method="post" class="d-grid gap-2">
-            {% csrf_token %}
-            {{ form.party_size.label }}
-            {{ form.party_size }}
-            {{ form.bill_amount.label }}
-            {{ form.bill_amount }}
-            <input type="submit" class="btn btn-block btn-dark" value="Next">
-        </form>
+        <div class="card-body">
+            <p class="display-6">How many people are sharing this bill?</p>
+            <form method="post" class="d-grid gap-2">
+                {% csrf_token %}
+                {{ form.party_size.label }}
+                {{ form.party_size }}
+                {{ form.bill_amount.label }}
+                {{ form.bill_amount }}
+                <input type="submit" class="btn btn-block btn-dark" value="Next">
+            </form>
+        </div>
     </div>
 {% endblock %}

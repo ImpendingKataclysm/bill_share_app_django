@@ -5,32 +5,36 @@
 {% block content %}
     <div class="list_wrap">
         <h2 class="display-4">Total Billing Amount: {{ total_billing_amount }}</h2>
-        <table class="table table-dark table-hover">
-            <thead class="table-secondary">
-                <tr>
-                    <th>Name</th>
-                    <th>Amount Due</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for member in party_members %}
-                    <tr>
-                        <td>{{ member.name }}</td>
-                        <td>{{ member.share_amount }}</td>
-                    </tr>
-                {% endfor %}
-            </tbody>
-        </table>
-        <div class="row">
-            <div class="col">
-                <a class="text-decoration-none btn btn-outline-primary" href="{% url 'bill_share:generate_pdf' %}">
-                    Download PDF
-                </a>
-            </div>
-            <div class="col">
-                <a class="text-decoration-none btn btn-outline-primary" href="{% url 'bill_share:home' %}">
-                    Split another bill
-                </a>
+        <div class="card">
+            <div class="card-body">
+                <table class="table table-dark table-hover">
+                    <thead class="table-secondary">
+                        <tr>
+                            <th>Name</th>
+                            <th>Amount Due</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for member in party_members %}
+                            <tr>
+                                <td class="text-capitalize">{{ member.name }}</td>
+                                <td>{{ member.share_amount }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                <div class="row">
+                    <div class="col">
+                        <a class="text-decoration-none btn btn-outline-primary" href="{% url 'bill_share:generate_pdf' %}">
+                            Download PDF
+                        </a>
+                    </div>
+                    <div class="col">
+                        <a class="text-decoration-none btn btn-outline-primary" href="{% url 'bill_share:home' %}">
+                            Split another bill
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
