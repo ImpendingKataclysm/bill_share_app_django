@@ -3,8 +3,8 @@
 {% block title %}Home{% endblock %}
 
 {% block content %}
-    <div class="card">
-        <div class="text-bg-primary my-4 p-5 rounded card-header">
+    <div class="card text-bg-light">
+        <div class="text-bg-primary p-5 card-header">
             <p class="display-6 card-title">Take the stress out of splitting the bill!</p>
         </div>
         <div class="card-body">
@@ -15,7 +15,7 @@
                 {{ form.party_size }}
                 {{ form.bill_amount.label }}
                 {{ form.bill_amount }}
-                <input type="submit" class="btn btn-block btn-dark" value="Next">
+                <input type="submit" class="btn btn-block btn-secondary" value="Next">
             </form>
         </div>
     </div>
