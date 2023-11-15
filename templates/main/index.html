@@ -9,13 +9,23 @@
         </div>
         <div class="card-body">
             <p class="display-6">How many people are sharing this bill?</p>
-            <form method="post" class="d-grid gap-2">
+            <form method="post">
                 {% csrf_token %}
-                {{ form.party_size.label }}
-                {{ form.party_size }}
-                {{ form.bill_amount.label }}
-                {{ form.bill_amount }}
-                <input type="submit" class="btn btn-block btn-secondary" value="Next">
+                <div class="mb-3">
+                    <label class="form-label">
+                        {{ form.party_size.label }}
+                    </label>
+                    {{ form.party_size }}
+                    <label class="form-label">
+                        {{ form.bill_amount.label }}
+                    </label>
+                    {{ form.bill_amount }}
+                </div>
+                <input
+                    type="submit"
+                    class="btn form-control btn-secondary"
+                    value="Next"
+                >
             </form>
         </div>
     </div>
