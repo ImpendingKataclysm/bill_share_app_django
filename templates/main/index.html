@@ -12,14 +12,18 @@
             <form method="post">
                 {% csrf_token %}
                 <div class="mb-3">
-                    <label class="form-label">
-                        {{ form.party_size.label }}
-                    </label>
-                    {{ form.party_size }}
-                    <label class="form-label">
-                        {{ form.bill_amount.label }}
-                    </label>
-                    {{ form.bill_amount }}
+                    <div class="form-floating my-2">
+                        {{ form.party_size }}
+                        <label class="form-label">
+                            {{ form.party_size.label }}
+                        </label>
+                    </div>
+                    <div class="form-floating my-2">
+                        {{ form.bill_amount }}
+                        <label class="form-label">
+                            {{ form.bill_amount.label }}
+                        </label>
+                    </div>
                 </div>
                 <input
                     type="submit"

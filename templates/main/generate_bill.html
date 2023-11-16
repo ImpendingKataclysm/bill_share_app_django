@@ -19,10 +19,18 @@
                 </p>
                 {% for form in formset %}
                     <div class="mb-3">
-                        <label class="form-label">{{ form.name.label }}</label>
-                        {{ form.name }}
-                        <label class="form-label">{{ form.days_spent.label }}</label>
-                        {{ form.days_spent }}
+                        <div class="form-floating my-2">
+                            {{ form.name }}
+                            <label class="form-label">
+                                {{ form.name.label }}
+                            </label>
+                        </div>
+                        <div class="form-floating my-2">
+                            {{ form.days_spent }}
+                            <label class="form-label">
+                                {{ form.days_spent.label }}
+                            </label>
+                        </div>
                     </div>
                 {% endfor %}
                 <input

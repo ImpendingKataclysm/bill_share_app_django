@@ -7,7 +7,8 @@ class PartySizeForm(forms.Form):
         min_value=1,
         max_value=10,
         widget=forms.NumberInput({
-            'class': 'form-control'
+            'class': 'form-control',
+            'placeholder': 'Enter party size'
         })
     )
 
@@ -16,7 +17,8 @@ class PartySizeForm(forms.Form):
         max_digits=10,
         decimal_places=2,
         widget=forms.NumberInput({
-            'class': 'form-control'
+            'class': 'form-control',
+            'placeholder': 'Enter amount due'
         })
     )
 
@@ -26,7 +28,8 @@ class PartyMemberForm(forms.Form):
         max_length=100,
         label='Name:',
         widget=forms.TextInput({
-            'class': 'form-control'
+            'class': 'form-control',
+            'placeholder': 'Enter name'
         })
     )
     days_spent = forms.IntegerField(
@@ -34,6 +37,7 @@ class PartyMemberForm(forms.Form):
         min_value=1,
         label='Days Spent:',
         widget=forms.NumberInput({
-            'class': 'form-control'
+            'class': 'form-control',
+            'placeholder': 'Enter days spent'
         })
     )
